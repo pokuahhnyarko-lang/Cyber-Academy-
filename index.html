@@ -1,0 +1,461 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>CYBER AI-HUB Academy</title>
+
+  <style>
+    *{
+      margin:0;
+      padding:0;
+      box-sizing:border-box;
+      font-family:Arial, sans-serif;
+    }
+
+    body{
+      background:#0f172a;
+      color:white;
+      overflow-x:hidden;
+    }
+
+    header{
+      background:linear-gradient(90deg,#2563eb,#7c3aed);
+      padding:20px;
+      text-align:center;
+      position:sticky;
+      top:0;
+      z-index:1000;
+      box-shadow:0 2px 10px rgba(0,0,0,0.4);
+    }
+
+    header h1{
+      font-size:2.5rem;
+      margin-bottom:10px;
+    }
+
+    header p{
+      font-size:1rem;
+      opacity:0.9;
+    }
+
+    nav{
+      display:flex;
+      justify-content:center;
+      flex-wrap:wrap;
+      gap:10px;
+      margin-top:15px;
+    }
+
+    nav button{
+      padding:10px 20px;
+      border:none;
+      border-radius:30px;
+      background:white;
+      color:#111827;
+      font-weight:bold;
+      cursor:pointer;
+      transition:0.3s;
+    }
+
+    nav button:hover{
+      transform:scale(1.05);
+      background:#facc15;
+    }
+
+    .hero{
+      text-align:center;
+      padding:80px 20px;
+    }
+
+    .hero h2{
+      font-size:3rem;
+      margin-bottom:20px;
+      color:#38bdf8;
+    }
+
+    .hero p{
+      max-width:700px;
+      margin:auto;
+      line-height:1.8;
+      color:#cbd5e1;
+      font-size:1.1rem;
+    }
+
+    .container{
+      width:90%;
+      max-width:1200px;
+      margin:auto;
+      padding:40px 0;
+    }
+
+    .cards{
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+      gap:25px;
+    }
+
+    .card{
+      background:#1e293b;
+      border-radius:20px;
+      padding:25px;
+      transition:0.3s;
+      box-shadow:0 0 15px rgba(0,0,0,0.4);
+    }
+
+    .card:hover{
+      transform:translateY(-10px);
+      box-shadow:0 0 25px rgba(56,189,248,0.5);
+    }
+
+    .card h3{
+      color:#38bdf8;
+      margin-bottom:15px;
+      font-size:1.7rem;
+    }
+
+    .card p{
+      line-height:1.7;
+      color:#d1d5db;
+    }
+
+    .card pre{
+      background:#0f172a;
+      padding:15px;
+      border-radius:10px;
+      margin-top:15px;
+      overflow:auto;
+      color:#22c55e;
+    }
+
+    .lesson-section{
+      margin-top:60px;
+    }
+
+    .lesson-title{
+      text-align:center;
+      margin-bottom:30px;
+      font-size:2.5rem;
+      color:#facc15;
+    }
+
+    .lesson-box{
+      background:#111827;
+      padding:25px;
+      border-radius:20px;
+      margin-bottom:25px;
+      box-shadow:0 0 15px rgba(0,0,0,0.3);
+    }
+
+    .lesson-box h4{
+      color:#38bdf8;
+      margin-bottom:10px;
+      font-size:1.5rem;
+    }
+
+    .lesson-box p{
+      line-height:1.8;
+      color:#d1d5db;
+    }
+
+    .lesson-box code{
+      display:block;
+      background:#0f172a;
+      color:#22c55e;
+      padding:15px;
+      margin-top:15px;
+      border-radius:10px;
+      overflow:auto;
+    }
+
+    .quiz-section{
+      margin-top:60px;
+      background:#1e293b;
+      padding:30px;
+      border-radius:20px;
+    }
+
+    .quiz-section h2{
+      text-align:center;
+      margin-bottom:20px;
+      color:#38bdf8;
+    }
+
+    .quiz-box{
+      margin-bottom:20px;
+    }
+
+    .quiz-box button{
+      margin-top:10px;
+      padding:10px 15px;
+      border:none;
+      border-radius:10px;
+      background:#2563eb;
+      color:white;
+      cursor:pointer;
+      transition:0.3s;
+    }
+
+    .quiz-box button:hover{
+      background:#1d4ed8;
+    }
+
+    .output{
+      margin-top:10px;
+      font-weight:bold;
+      color:#facc15;
+    }
+
+    footer{
+      text-align:center;
+      padding:30px;
+      margin-top:50px;
+      background:#020617;
+      color:#94a3b8;
+    }
+
+    .search-box{
+      text-align:center;
+      margin-top:30px;
+    }
+
+    .search-box input{
+      width:80%;
+      max-width:500px;
+      padding:15px;
+      border:none;
+      border-radius:50px;
+      outline:none;
+      font-size:1rem;
+    }
+
+    @media(max-width:768px){
+      .hero h2{
+        font-size:2rem;
+      }
+
+      header h1{
+        font-size:2rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>CYBER AI-HUB Academy</h1>
+    <p>Learn Programming Languages Easily With Examples</p>
+
+    <nav>
+      <button onclick="scrollToSection('languages')">Languages</button>
+      <button onclick="scrollToSection('lessons')">Lessons</button>
+      <button onclick="scrollToSection('quiz')">Quiz</button>
+    </nav>
+  </header>
+
+  <section class="hero">
+    <h2>Master Coding Step By Step</h2>
+    <p>
+      Learn HTML, CSS, JavaScript, Python, C++, Java and more.
+      This website teaches beginners how programming languages work
+      with real examples and easy explanations.
+    </p>
+
+    <div class="search-box">
+      <input type="text" id="searchInput" placeholder="Search programming language..." onkeyup="searchLanguage()">
+    </div>
+  </section>
+
+  <div class="container" id="languages">
+    <div class="cards" id="languageCards">
+
+      <div class="card">
+        <h3>HTML</h3>
+        <p>
+          HTML is used to create website structure such as headings,
+          paragraphs, buttons and images.
+        </p>
+        <pre>
+&lt;h1&gt;Hello World&lt;/h1&gt;
+        </pre>
+      </div>
+
+      <div class="card">
+        <h3>CSS</h3>
+        <p>
+          CSS is used to style websites using colors, layouts,
+          animations and responsive design.
+        </p>
+        <pre>
+body {
+  background: black;
+  color: white;
+}
+        </pre>
+      </div>
+
+      <div class="card">
+        <h3>JavaScript</h3>
+        <p>
+          JavaScript adds functionality and interaction to websites.
+        </p>
+        <pre>
+alert("Hello World")
+        </pre>
+      </div>
+
+      <div class="card">
+        <h3>Python</h3>
+        <p>
+          Python is beginner-friendly and used for AI, automation,
+          websites and cybersecurity.
+        </p>
+        <pre>
+print("Hello World")
+        </pre>
+      </div>
+
+      <div class="card">
+        <h3>C++</h3>
+        <p>
+          C++ is powerful for game development, software and systems programming.
+        </p>
+        <pre>
+#include &lt;iostream&gt;
+using namespace std;
+        </pre>
+      </div>
+
+      <div class="card">
+        <h3>Java</h3>
+        <p>
+          Java is used for Android apps, enterprise systems and desktop apps.
+        </p>
+        <pre>
+System.out.println("Hello")
+        </pre>
+      </div>
+
+    </div>
+  </div>
+
+  <div class="container lesson-section" id="lessons">
+
+    <h2 class="lesson-title">Programming Lessons</h2>
+
+    <div class="lesson-box">
+      <h4>Lesson 1: Variables</h4>
+      <p>
+        Variables store information in programming languages.
+        You can save names, numbers and text inside variables.
+      </p>
+
+      <code>
+let name = "Kingsley";
+console.log(name);
+      </code>
+    </div>
+
+    <div class="lesson-box">
+      <h4>Lesson 2: Functions</h4>
+      <p>
+        Functions are reusable blocks of code that perform tasks.
+      </p>
+
+      <code>
+function greet(){
+  alert("Welcome to coding")
+}
+      </code>
+    </div>
+
+    <div class="lesson-box">
+      <h4>Lesson 3: Loops</h4>
+      <p>
+        Loops repeat code multiple times automatically.
+      </p>
+
+      <code>
+for(let i = 1; i <= 5; i++){
+  console.log(i)
+}
+      </code>
+    </div>
+
+    <div class="lesson-box">
+      <h4>Lesson 4: Conditions</h4>
+      <p>
+        Conditions help programs make decisions.
+      </p>
+
+      <code>
+let age = 18;
+
+if(age >= 18){
+  console.log("Adult")
+}else{
+  console.log("Minor")
+}
+      </code>
+    </div>
+
+  </div>
+
+  <div class="container quiz-section" id="quiz">
+
+    <h2>Programming Quiz</h2>
+
+    <div class="quiz-box">
+      <p>1. Which language styles websites?</p>
+      <button onclick="checkAnswer('css')">CSS</button>
+      <button onclick="checkAnswer('html')">HTML</button>
+      <button onclick="checkAnswer('python')">Python</button>
+      <div class="output" id="quizOutput"></div>
+    </div>
+
+  </div>
+
+  <footer>
+    <p>CYBER AI-HUB Academy © 2026</p>
+    <p>Developed by KINGSLEY-XMDTECH</p>
+  </footer>
+
+  <script>
+
+    function scrollToSection(id){
+      document.getElementById(id).scrollIntoView({
+        behavior:'smooth'
+      })
+    }
+
+    function checkAnswer(answer){
+      const output = document.getElementById('quizOutput')
+
+      if(answer === 'css'){
+        output.innerHTML = '✅ Correct! CSS styles websites.'
+      }else{
+        output.innerHTML = '❌ Wrong answer. Try again.'
+      }
+    }
+
+    function searchLanguage(){
+      const input = document.getElementById('searchInput').value.toLowerCase()
+      const cards = document.querySelectorAll('.card')
+
+      cards.forEach(card => {
+        const title = card.querySelector('h3').innerText.toLowerCase()
+
+        if(title.includes(input)){
+          card.style.display = 'block'
+        }else{
+          card.style.display = 'none'
+        }
+      })
+    }
+
+    console.log('CYBER AI-HUB Academy Loaded Successfully')
+
+  </script>
+
+</body>
+</html>
